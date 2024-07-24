@@ -1,0 +1,89 @@
+:host {
+    .tasks-table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 2px solid var(--grey);
+
+        td,
+        th {
+            padding: 10px 15px;
+            word-wrap: break-word;
+            border: 1px solid var(--grey);
+            line-height: 26px;
+            text-align: center;
+            border: none;
+            position: relative;
+        }
+
+        td {
+            color: var(--black-grey);
+            font-weight: 600;
+
+            button {
+                border-radius: 8px;
+                border: none;
+                color: var(--white);
+                margin: 0 10px;
+                cursor: pointer;
+            }
+
+            .btn-edit,
+            .btn-delete {
+                width: 60px;
+                height: 60px;
+                background: var(--orange);
+
+                &:hover {
+                    transition: 0.5s;
+                    background-color: var(--orange-010);
+                }
+            }
+
+            .btn-delete {
+                background: var(--red);
+
+                &:hover {
+                    background-color: var(--red-010);
+                }
+            }
+
+            .table-data {
+                display: inline-block;
+                width: 100%;
+                border: none;
+                padding: 10px;
+                border-radius: 8px;
+                font-weight: 600;
+                color: var(--black);
+                text-align: center;
+                font-size: 16px;
+                white-space: pre-wrap;
+                overflow-wrap: break-word;
+                color: var(--black-grey);
+                text-transform: capitalize;
+                background: var(--white-010);
+            }
+
+
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--white-010);
+
+            .table-data {
+                background: var(--white);
+            }
+        }
+
+        .no-items {
+            td{
+                padding: 15px;
+                font-size: 22px;
+                font-weight: 600;
+                font-style: italic;
+            }
+        }
+    }
+
+
+}

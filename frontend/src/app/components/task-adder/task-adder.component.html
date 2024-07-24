@@ -1,0 +1,22 @@
+<main>
+    <div class="container">
+        <section class="task-adder">
+            <input type="text" placeholder="Adicionar Tarefa" class="input-task">
+            <button type="submit" (click)="addTask()">+</button>
+        </section>
+    </div>
+    
+    <div class="task-table-container">
+        <app-task-table 
+        [tasks]="tasks" 
+        (updateTaskEvent)="updateTask($event)" 
+        (deleteTaskEvent)="deleteTask($event)" 
+        />
+    
+        @if (isLoading) {
+            <div class="loading-overlay">
+                <mat-spinner></mat-spinner>
+            </div>
+        }
+    </div>
+</main>

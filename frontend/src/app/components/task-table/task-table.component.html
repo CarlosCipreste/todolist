@@ -1,0 +1,43 @@
+<table class="tasks-table">
+    <thead>
+        <tr>
+            <th>Tarefa</th>
+            <th>Status</th>
+            <th>Criado em</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (tasks.length >0 ){
+            @for (task of tasks; track $index) {
+                <tr>
+                    <td>
+                        <span class="table-data">{{task.title}}
+        
+                        </span>
+                    </td>
+                    <td>
+                        <span class="table-data">{{task.status}}</span>
+                    </td>
+                    <td>
+                        <span class="table-data">{{ task.created_at | date:"HH:mm dd/MM/YYYY" }}</span>
+                    </td>
+                    <td>
+                        <button class="btn-edit" (click)="editDialog(task)">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                        <button class="btn-delete" (click)="deleteDialog(task.task_id)">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </td>
+                </tr>
+                }
+        } 
+        @else{
+            <tr class="no-items">
+                <td colspan="4">Nenhuma Tarefa no momento...</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+
+<mat-dialog-content>
+    <header>
+        <h1>Editar a tarefa</h1>
+        <button (click)="onCancel()">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </button>
+    </header>
+    <div class="dialog-container">
+        <mat-form-field>
+            <mat-label>Título</mat-label>
+            <input matInput [(ngModel)]="data.title">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="data.status">
+                <mat-option value="pendente">Pendente</mat-option>
+                <mat-option value="em andamento">Em Andamento</mat-option>
+                <mat-option value="concluida">Concluída</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button (click)="onSave()">Salvar</button>
+    </div>
+</mat-dialog-content>

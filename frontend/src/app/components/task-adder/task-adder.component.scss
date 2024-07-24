@@ -1,0 +1,78 @@
+:host {
+    main{
+        background: var(--white);
+        border-radius: 20px;
+        padding: 20px;
+        width: 90%;
+        margin: 40px auto;
+        box-shadow: 0 4px 8px rgba(0 0 0.2);
+    }
+    
+    .task-adder {
+        display: flex;
+        margin-bottom: 50px;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .input-task {
+        width: 100%;
+        flex: 1;
+        padding: 15px;
+        border: 1px solid var(--grey);
+        border-radius: 8px;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 600;
+
+        &:focus {
+            transition: 0.5s;
+            border: 2px solid var(--primary);
+        }
+    }
+
+
+
+    button[type="submit"] {
+        background-color: var(--primary);
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 8px;
+        color: var(--white);
+        font-size: 1.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--primary-010);
+        }
+    }
+
+    .task-table-container {
+        position: relative;
+
+        &.loading {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    }
+
+    .loading-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 1;
+    }
+
+
+}
